@@ -26,8 +26,6 @@ import com.nt.service.EmpService;
 @PropertySource(value = "classpath:email.properties")
 @RequestMapping("/employees")
 public class HomeController {
-	private static final Logger logger =
-            LoggerFactory.getLogger(HomeController.class);
 	
 	@Autowired
 	private EmpService service;        
@@ -50,7 +48,6 @@ public class HomeController {
 	//employees
 	@GetMapping
 	public List<Employee> allRecords(){
-		logger.info("this is controller method");
 		List<Employee> list = service.allRecords();
 		return list;
 	}
